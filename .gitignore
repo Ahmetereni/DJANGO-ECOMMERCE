@@ -2,3 +2,8 @@
 staticfiles
 static
 media
+.env
+sil.py
+sil.json
+client.json
+demo.html

@@ -11,6 +11,19 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from the .env file
+load_dotenv()
+
+# Access the environment variables
+NAME = os.getenv('NAME')
+DB_USER = os.getenv('DB_USER')
+PASSWORD = os.getenv('PASSWORD')
+HOST = os.getenv('HOST')
+PORT = os.getenv('PORT')
+
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
