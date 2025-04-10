@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block body %}
+
+    <!-- Page content -->
+    <main class="content-wrapper">
+
+      <!-- Decoration Advice Form -->
+      <section class="bg-body-tertiary pb-1 pb-sm-3 pb-md-4 pb-lg-5" style="margin-top: -110px; padding-top: 110px">
+        <div class="container py-5 mb-xxl-3">
+
+          <!-- Page title -->
+          <h1 class="text-center pb-2 pb-sm-3 mt-lg-3 mt-xl-4">Paylaşın, Uzmanlarımızdan Dekorasyon Önerisi Alın</h1>
+
+          <!-- Form wrapper -->
+          <div class="row justify-content-center">
+            <div class="col-md-11 col-lg-9 col-xl-8">
+              <div class="bg-body rounded-5 py-3 py-sm-4 px-4 px-sm-5">
+                <p class="text-center py-3 mx-auto" style="max-width: 450px">Dekorasyonunuzun fotoğrafını yükleyin, uzmanlarımızdan öneriler alın! 24 saat içinde size geri dönüş yapacağız.</p>
+
+                <!-- Decoration Form -->
+                <form class="needs-validation" novalidate enctype="multipart/form-data">
+                  <div class="row g-4">
+                    <div class="col-md-6 position-relative">
+                      <label for="name" class="form-label">Adınız *</label>
+                      <input type="text" class="form-control form-control-lg rounded-pill" id="name" required>
+                      <div class="invalid-tooltip bg-transparent z-0 py-0 ps-3">Adınızı giriniz!</div>
+                    </div>
+                    <div class="col-md-6 position-relative">
+                      <label for="email" class="form-label">E-posta *</label>
+                      <input type="email" class="form-control form-control-lg rounded-pill" id="email" required>
+                      <div class="invalid-tooltip bg-transparent z-0 py-0 ps-3">Geçerli bir e-posta giriniz!</div>
+                    </div>
+                    <div class="col-12 position-relative">
+                      <label for="message" class="form-label">Dekorasyonunuz hakkında bilgi verin *</label>
+                      <textarea class="form-control form-control-lg rounded-6" id="message" rows="5" required></textarea>
+                      <div class="invalid-tooltip bg-transparent z-0 py-0 ps-3">Dekorasyonunuzu anlatın!</div>
+                    </div>
+                    <div class="col-12 position-relative">
+                      <label for="photo" class="form-label">Dekorasyon Fotoğrafı Yükleyin *</label>
+                      <input type="file" class="form-control form-control-lg rounded-pill" id="photo" accept="image/*" required>
+                      <div class="invalid-tooltip bg-transparent z-0 py-0 ps-3">Lütfen bir fotoğraf yükleyin!</div>
+                    </div>
+                    <div class="col-12 text-center pt-2 pb-3">
+                      <button type="submit" class="btn btn-lg btn-dark rounded-pill">Öneri Al</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+{% endblock %}

@@ -1,0 +1,253 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block body %}
+    <!-- Page content -->
+    <main class="content-wrapper">
+
+      <!-- Gezinme Çubuğu (Breadcrumb) -->
+      <nav class="container pt-1 pt-md-0 my-3 my-md-4" aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="home-grocery.html">Ana Sayfa</a></li>
+          <li class="breadcrumb-item"><a href="shop-catalog-grocery.html">Mağaza</a></li>
+          <li class="breadcrumb-item"><a href="checkout-v2-cart.html">Sepet</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Ödeme</li>
+        </ol>
+      </nav>
+
+
+
+      <!-- Checkout form + Order summary -->
+      <section class="container pb-5 mb-2 mb-md-3 mb-lg-4 mb-xl-5">
+        <h1 class="h3 mb-4">Siparişinizi Tamamlayın.</h1>
+        <form method="POST">
+        <div class="row">
+
+          <!-- Checkout form -->
+          <div class="col-lg-8 col-xl-7 mb-5 mb-lg-0">
+
+            <!-- Delivery address section -->
+            <h2 class="h5 mb-4">Teslimat Adresi</h2>
+            <div class="row row-cols-1 row-cols-sm-2 g-3 g-ms-4 mb-3 mb-sm-4">
+              <div class="col">
+                <label for="name" class="form-label">Adınız *</label>
+                <input type="text" class="form-control form-control-lg rounded-pill" id="name" data-id="name" required>
+              </div>
+              <div class="col">
+                <label for="surname" class="form-label">Soyadınız *</label>
+                <input type="text" class="form-control form-control-lg rounded-pill" id="surname" data-id="surname" required>
+              </div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-sm-2 g-3 g-ms-4 mb-3 mb-sm-4">
+              <div class="col">
+                <label for="email" class="form-label">E-posta *</label>
+                <input type="email" class="form-control form-control-lg rounded-pill" id="email" data-id="email" required>
+              </div>
+              <div class="col">
+                <label for="phone-number" class="form-label">Telefon Numarası * <span class="fw-normal text-body-secondary">(Siparişinizle ilgili bir durum olursa sizinle iletişime geçeceğiz)</span></label>
+                <input type="tel" class="form-control form-control-lg rounded-pill" id="phone-number" data-id="phone-number" data-input-format='{"numericOnly": true, "delimiters": ["+90 ", " ", " "], "blocks": [0, 3, 3, 2]}' placeholder="+90 ___ ___ __">
+              </div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-sm-2 g-3 g-ms-4 mb-3 mb-sm-4">
+              <div class="col">
+                <label for="city" class="form-label">Şehir *</label>
+                <input type="text" class="form-control form-control-lg rounded-pill" id="city" data-id="city" required>
+              </div>
+              <div class="col">
+                <label for="zipcode" class="form-label">Posta Kodu *</label>
+                <input type="text" class="form-control form-control-lg rounded-pill" id="zipcode" data-id="zipcode" required>
+              </div>
+            </div>
+
+            <label for="address" class="form-label">Adres *</label>
+            <input type="text" class="form-control form-control-lg rounded-pill" id="address" data-id="address" required>
+
+            <!-- Payment method section -->
+            <h2 class="h5 mt-5 mb-0">Ödeme Yöntemi</h2>
+            <div id="paymentMethod" role="list">
+
+              <!-- Kredi Kartı -->
+              <div class="mt-4">
+                <div class="form-check mb-0" role="listitem" data-bs-toggle="collapse" data-bs-target="#card" aria-expanded="true" aria-controls="card">
+                  <label class="form-check-label d-flex align-items-center text-dark-emphasis fw-semibold">
+                    <input type="radio" class="form-check-input fs-base me-2 me-sm-3" name="payment-method" checked>
+                    Kredi veya Banka Kartı
+                    <span class="d-none d-sm-flex gap-2 ms-3">
+                      <img src="{% static "assets/img/payment-methods/amex.svg" %}" class="d-block bg-info rounded-1" width="36" alt="Amex">
+                      <img src="{% static "assets/img/payment-methods/visa-light-mode.svg" %}" class="d-none-dark" width="36" alt="Visa">
+                      <img src="{% static "assets/img/payment-methods/visa-dark-mode.svg" %}" class="d-none d-block-dark" width="36" alt="Visa">
+                      <img src="{% static "assets/img/payment-methods/mastercard.svg" %}" width="36" alt="Mastercard">
+                      <img src="{% static "assets/img/payment-methods/maestro.svg" %}" width="36" alt="Maestro">
+                    </span>
+                  </label>
+                </div>
+                <br>
+                <div class="collapse show" id="card" data-bs-parent="#paymentMethod">
+                  <form class="needs-validation pt-4 pb-2 ps-3 ms-2 ms-sm-3" novalidate>
+                    <div class="position-relative mb-3 mb-sm-4" data-input-format='{"creditCard": true}'>
+                      <input type="text" class="form-control form-control-lg form-icon-end rounded-pill" placeholder="Kart numarası">
+                      <span class="position-absolute d-flex top-50 end-0 translate-middle-y fs-5 text-body-tertiary me-3" data-card-icon></span>
+                    </div>
+                    <div class="row row-cols-1 row-cols-sm-2 g-3 g-sm-4">
+                      <div class="col">
+                        <input type="text" class="form-control form-control-lg rounded-pill" data-input-format='{"date": true, "datePattern": ["m", "y"]}' placeholder="AA/YY">
+                      </div>
+                      <div class="col">
+                        <input type="text" class="form-control form-control-lg rounded-pill" maxlength="4" data-input-format='{"numeral": true, "numeralPositiveOnly": true, "numeralThousandsGroupStyle": "none"}' placeholder="CVC">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <!-- Havale & EFT -->
+              <div class="mt-4">
+                <div class="form-check mb-0" role="listitem" data-bs-toggle="collapse" data-bs-target="#cash" aria-expanded="false" aria-controls="cash">
+                  <label class="form-check-label w-100 text-dark-emphasis fw-semibold">
+                    <input type="radio" class="form-check-input fs-base me-2 me-sm-3" name="payment-method">
+                    Havale & EFT
+                  </label>
+                </div>
+                <div class="collapse" id="cash" data-bs-parent="#paymentMethod">
+                  <div class="d-sm-flex align-items-center pt-3 pt-sm-4 pb-2 ps-3 ms-2 ms-sm-3">
+                    <span class="fs-sm me-3">Bir sonraki sayfada banka hesap numaraları sunulacaktır.</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Kapıda Kart ile Ödeme -->
+              <div class="mt-4">
+                <div class="form-check mb-0" role="listitem" data-bs-toggle="collapse" data-bs-target="#card-on-delivery" aria-expanded="false" aria-controls="card-on-delivery">
+                  <label class="form-check-label text-dark-emphasis fw-semibold">
+                    <input type="radio" class="form-check-input fs-base me-2 me-sm-3" name="payment-method">
+                    Kapıda Kart ile Ödeme
+                  </label>
+                </div>
+                <div class="collapse" id="card-on-delivery" data-bs-parent="#paymentMethod"></div>
+              </div>
+            </div>
+
+            <!-- Paketleme Bölümü -->
+            <h2 class="h5 mt-5 mb-4">Paketleme</h2>
+            <div class="alert alert-success text-dark-emphasis fs-sm border-0 rounded-4 mb-4" role="alert">
+              Biz çevre dostu bir şirketiz 🍏, bu yüzden mümkün olduğunca az plastik kullanıyoruz.
+            </div>
+            <div class="d-flex flex-column gap-3">
+              <div class="form-check m-0">
+                <input type="radio" class="form-check-input" id="bags" name="packaging">
+                <label for="bags" class="form-check-label text-dark-emphasis fw-medium">Markalı çantalar <span class="text-body-secondary">(emici polyester)</span></label>
+              </div>
+              <div class="form-check m-0">
+                <input type="radio" class="form-check-input" id="eco" name="packaging">
+                <label for="eco" class="form-check-label text-dark-emphasis fw-medium">Çevre dostu paketleme <span class="text-body-secondary">(karton ambalaj)</span></label>
+              </div>
+            </div>
+
+          </div>
+
+
+          <!-- Sipariş özeti (sabit yan panel) -->
+          <aside class="col-lg-4 offset-xl-1" style="margin-top: -115px">
+            <div class="position-sticky top-0" style="padding-top: 115px">
+              <div class="d-flex align-items-center justify-content-between border-bottom pb-4 mb-4">
+                <h2 class="h5 mb-0 me-3">Sipariş Özeti</h2>
+                <div class="nav">
+                  <a class="nav-link text-decoration-underline p-0" href="checkout-v2-cart.html">Düzenle</a>
+                </div>
+              </div>
+              <ul class="list-unstyled fs-sm gap-3 mb-0">
+                <li class="d-flex justify-content-between">
+                  Ara toplam (8 ürün):
+                  <span class="text-dark-emphasis fw-medium">₺{{cart.get_total}}</span>
+                </li>
+                <li class="d-flex justify-content-between">
+                  İndirim:
+                  <span class="text-danger fw-medium">-₺2.79</span>
+                </li>
+                <li class="d-flex justify-content-between">
+                  Teslimat:
+                  <span class="text-dark-emphasis fw-medium">Ücretsiz</span>
+                </li>
+              </ul>
+              <div class="border-top pt-4 mt-4">
+                <div class="d-flex justify-content-between mb-4">
+                  <span class="fs-sm">Tahmini toplam:</span>
+                  <span class="h5 mb-0">₺{{cart.get_total}}</span>
+                </div>
+                <div class="mb-4">
+                  <label for="order-note" class="form-label">Sipariş notu</label>
+                  <textarea class="form-control rounded-5" id="order-note" rows="3"></textarea>
+                </div>
+                <div class="form-check mb-4">
+                  <input type="checkbox" class="form-check-input" id="age">
+                  <label for="age" class="form-check-label">Siparişte yaş sınırlaması olan ürünler var. <span class="fw-semibold">En az 18 yaşında olduğumu</span> onaylıyorum.</label>
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary w-100 rounded-pill">
+                    Siparişi Onayla
+                    <i class="ci-chevron-right fs-lg ms-1 me-n1"></i>
+                </button>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+        </form>
+      </section>
+    </main>
+
+    <script>
+
+
+      $(document).on('submit', function(e) {
+          e.preventDefault();
+
+          let name = $('#name').val();
+          let surname = $('#surname').val();
+          let email = $('#email').val();
+          let phonenumber = $('#phone-number').val();
+          let city = $('#city').val();
+          let zipcode = $('#zipcode').val();
+          let address = $('#address').val();
+
+
+
+          $.ajax({
+              type: 'POST',
+              url: '{% url "complete-order" %}',
+
+              data: {
+                  name: name,
+                  surname: surname,
+                  email: email,
+                  phonenumber: phonenumber,
+                  city: city,
+                  zipcode: zipcode,
+                  address: address,
+                  csrfmiddlewaretoken: '{{ csrf_token }}',
+                  action: 'post'
+              },
+
+              success: function(json) {
+
+                  window.location.replace("{% url 'payment-success' %}")
+                  //console.log("AJAX Success:", json); // Log success response
+
+              },
+
+              error: function(xhr, errmsg, err) {
+
+                  window.location.replace("{% url 'payment-failed' %}")
+                  //console.log("AJAX Error:", xhr.status, xhr.responseText); // Log error details
+              }
+          });
+      });
+
+
+
+    </script>
+
+
+{% endblock %}

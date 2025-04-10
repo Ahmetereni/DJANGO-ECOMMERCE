@@ -1,0 +1,451 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block body %}
+
+    <!-- Page content -->
+    <main class="content-wrapper">
+
+
+      <!-- Featured post with video -->
+      <section class="container py-4 py-md-5 my-sm-3 my-md-0">
+        <div class="row row-cols-1 row-cols-md-2 g-0 overflow-hidden rounded-5">
+
+          <!-- Video -->
+          <div class="col position-relative">
+            <div class="ratio ratio-4x3"></div>
+            <img src="{% static "assets/img/blog/grid/v2/video01.jpg" %}" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="Perde Videosu">
+            <div class="position-absolute start-0 bottom-0 d-flex align-items-end w-100 h-100 z-2 p-4">
+              <a class="btn btn-lg btn-light rounded-pill m-md-2" href="https://www.youtube.com/watch?v=X7lCwxswYnE" data-glightbox data-gallery="video1">
+                <i class="ci-play fs-lg ms-n1 me-2"></i>
+                Oynat
+              </a>
+            </div>
+          </div>
+
+          <!-- Title + text -->
+          <div class="col bg-dark py-5 px-4 px-xl-5" data-bs-theme="dark">
+            <div class="py-md-4 py-lg-5 px-md-4 px-lg-5 my-xl-4 my-xxl-5">
+              <div class="nav mb-3">
+                <a class="nav-link text-body fs-xs text-uppercase p-0" href="#!">Perde Tasarımları</a>
+              </div>
+              <h1>Perdelerle evine zarafet kat: Kolay adımlarla</h1>
+              <p class="text-body pb-sm-2 pb-lg-0 mb-4 mb-lg-5">Perdeler, evinizin havasını değiştiren eğlenceli ve yaratıcı dokunuşlardır.</p>
+              <a class="btn btn-lg btn-outline-light rounded-pill" href="#!">Daha fazla bilgi</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Grid with filters -->
+      <section class="container pt-1 pt-md-2 pt-lg-3 pt-xl-4 pt-xxl-5">
+
+        <!-- Category filters -->
+        <nav class="overflow-x-auto mb-3" data-simplebar data-simplebar-auto-hide="false">
+          <ul class="nav nav-pills flex-nowrap text-nowrap py-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#!">Tümü</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!">Perde Tasarımları</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!">Perde Modelleri</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!">İç Mekan Düzenlemeleri</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!">Işık ve Gölge</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!">Trend Perde Modelleri</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Posts grid -->
+        <div class="row row-cols-1 row-cols-sm-2 gy-5">
+
+          <!-- Article -->
+          <article class="col">
+            <a class="ratio d-flex hover-effect-scale rounded-4 overflow-hidden" href="#!" style="--cz-aspect-ratio: calc(466 / 636 * 100%)">
+              <img src="{% static "assets/img/blog/grid/v2/01.jpg" %}" class="hover-effect-target" alt="Perde Resmi">
+            </a>
+            <div class="pt-4">
+              <div class="nav pb-2 mb-1">
+                <a class="nav-link text-body fs-xs text-uppercase p-0" href="#!">Perde Tasarımları</a>
+              </div>
+              <h3 class="h5 mb-3">
+                <a class="hover-effect-underline" href="#!">Perdelerle sıcak ve davetkar bir mekan yaratın</a>
+              </h3>
+              <div class="nav align-items-center gap-2 fs-xs">
+                <a class="nav-link text-body-secondary fs-xs fw-normal p-0" href="#!">Ahmet Yılmaz</a>
+                <hr class="vr my-1 mx-1">
+                <span class="text-body-secondary">13 Ekim 2024</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article -->
+          <article class="col">
+            <a class="ratio d-flex hover-effect-scale rounded-4 overflow-hidden" href="#!" style="--cz-aspect-ratio: calc(466 / 636 * 100%)">
+              <img src="{% static "assets/img/blog/grid/v2/02.jpg" %}" class="hover-effect-target" alt="Perde Resmi">
+            </a>
+            <div class="pt-4">
+              <div class="nav pb-2 mb-1">
+                <a class="nav-link text-body fs-xs text-uppercase p-0" href="#!">Işık ve Gölge</a>
+              </div>
+              <h3 class="h5 mb-3">
+                <a class="hover-effect-underline" href="#!">Perdelerle ışığı yönetin: Büyüleyici aydınlatma ipuçları</a>
+              </h3>
+              <div class="nav align-items-center gap-2 fs-xs">
+                <a class="nav-link text-body-secondary fs-xs fw-normal p-0" href="#!">Elif Demir</a>
+                <hr class="vr my-1 mx-1">
+                <span class="text-body-secondary">10 Ekim 2024</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article -->
+          <article class="col">
+            <a class="ratio d-flex hover-effect-scale rounded-4 overflow-hidden" href="#!" style="--cz-aspect-ratio: calc(466 / 636 * 100%)">
+              <img src="{% static "assets/img/blog/grid/v2/03.jpg" %}" class="hover-effect-target" alt="Perde Resmi">
+            </a>
+            <div class="pt-4">
+              <div class="nav pb-2 mb-1">
+                <a class="nav-link text-body fs-xs text-uppercase p-0" href="#!">Perde Modelleri</a>
+              </div>
+              <h3 class="h5 mb-3">
+                <a class="hover-effect-underline" href="#!">Retro dokunuş: Klasik perde modellerini dekorasyonunuza entegre edin</a>
+              </h3>
+              <div class="nav align-items-center gap-2 fs-xs">
+                <a class="nav-link text-body-secondary fs-xs fw-normal p-0" href="#!">Zeynep Kaya</a>
+                <hr class="vr my-1 mx-1">
+                <span class="text-body-secondary">29 Eylül 2024</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article -->
+          <article class="col">
+            <a class="ratio d-flex hover-effect-scale rounded-4 overflow-hidden" href="#!" style="--cz-aspect-ratio: calc(466 / 636 * 100%)">
+              <img src="{% static "assets/img/blog/grid/v2/04.jpg" %}" class="hover-effect-target" alt="Perde Resmi">
+            </a>
+            <div class="pt-4">
+              <div class="nav pb-2 mb-1">
+                <a class="nav-link text-body fs-xs text-uppercase p-0" href="#!">İç Mekan Düzenlemeleri</a>
+              </div>
+              <h3 class="h5 mb-3">
+                <a class="hover-effect-underline" href="#!">Ekspresif perde düzenlemeleri ile eklektik bir stil yaratın</a>
+              </h3>
+              <div class="nav align-items-center gap-2 fs-xs">
+                <a class="nav-link text-body-secondary fs-xs fw-normal p-0" href="#!">Mehmet Öz</a>
+                <hr class="vr my-1 mx-1">
+                <span class="text-body-secondary">17 Eylül 2024</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Load more button -->
+        <div class="d-flex flex-column flex-sm-row justify-content-center pt-5">
+          <button type="button" class="btn btn-lg btn-outline-dark rounded-pill">Daha fazla yükle</button>
+        </div>
+      </section>
+
+
+      <!-- Featured in category posts (Carousel) -->
+      <section class="container py-5 mt-1 my-sm-2 my-md-3 my-lg-4 my-xl-5">
+        <div class="row py-2 py-xxl-3">
+          <div class="col-lg-3 pb-2 mb-4">
+            <h2 class="text-center text-lg-start mb-lg-5">Retro Perde Dokunuşları</h2>
+
+            <!-- External slider prev/next buttons -->
+            <div class="d-flex justify-content-center justify-content-lg-start gap-2">
+              <button type="button" id="prev" class="btn btn-lg btn-icon btn-outline-secondary rounded-circle animate-slide-start me-1" aria-label="Prev">
+                <i class="ci-chevron-left fs-xl animate-target"></i>
+              </button>
+              <button type="button" id="next" class="btn btn-lg btn-icon btn-outline-secondary rounded-circle animate-slide-end" aria-label="Next">
+                <i class="ci-chevron-right fs-xl animate-target"></i>
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-9">
+
+            <!-- Slider -->
+            <div class="swiper" data-swiper='{
+              "slidesPerView": 1,
+              "spaceBetween": 24,
+              "navigation": {
+                "prevEl": "#prev",
+                "nextEl": "#next"
+              },
+              "scrollbar": {
+                "el": ".swiper-scrollbar"
+              },
+              "breakpoints": {
+                "500": {
+                  "slidesPerView": 2
+                },
+                "768": {
+                  "slidesPerView": 3
+                }
+              }
+            }'>
+              <div class="swiper-wrapper pb-3 mb-2 mb-sm-3 mb-md-4">
+
+                <!-- Article -->
+                <article class="swiper-slide">
+                  <a class="ratio d-flex hover-effect-scale rounded-4 overflow-hidden" href="#!" style="--cz-aspect-ratio: calc(260 / 306 * 100%)">
+                    <img src="{% static "assets/img/blog/grid/v2/09.jpg" %}" class="hover-effect-target" alt="Perde Resmi">
+                  </a>
+                  <div class="pt-4">
+                    <div class="nav pb-2 mb-1">
+                      <a class="nav-link text-body fs-xs text-uppercase p-0" href="#!">Perde Tasarımları</a>
+                    </div>
+                    <h3 class="h6 mb-3">
+                      <a class="hover-effect-underline" href="#!">Özel günler için perde seçimi: 3 kolay adım</a>
+                    </h3>
+                    <div class="nav align-items-center gap-2 fs-xs">
+                      <a class="nav-link text-body-secondary fs-xs fw-normal p-0" href="#!">Seda Yılmaz</a>
+                      <hr class="vr my-1 mx-1">
+                      <span class="text-body-secondary">11 Eylül 2024</span>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Article -->
+                <article class="swiper-slide">
+                  <a class="ratio d-flex hover-effect-scale rounded-4 overflow-hidden" href="#!" style="--cz-aspect-ratio: calc(260 / 306 * 100%)">
+                    <img src="{% static "assets/img/blog/grid/v2/10.jpg" %}" class="hover-effect-target" alt="Perde Resmi">
+                  </a>
+                  <div class="pt-4">
+                    <div class="nav pb-2 mb-1">
+                      <a class="nav-link text-body fs-xs text-uppercase p-0" href="#!">Perde Modelleri</a>
+                    </div>
+                    <h3 class="h6 mb-3">
+                      <a class="hover-effect-underline" href="#!">Mekanınıza uygun perde modelini seçme rehberi</a>
+                    </h3>
+                    <div class="nav align-items-center gap-2 fs-xs">
+                      <a class="nav-link text-body-secondary fs-xs fw-normal p-0" href="#!">Canan Arslan</a>
+                      <hr class="vr my-1 mx-1">
+                      <span class="text-body-secondary">5 Eylül 2024</span>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Article -->
+                <article class="swiper-slide">
+                  <a class="ratio d-flex hover-effect-scale rounded-4 overflow-hidden" href="#!" style="--cz-aspect-ratio: calc(260 / 306 * 100%)">
+                    <img src="{% static "assets/img/blog/grid/v2/11.jpg" %}" class="hover-effect-target" alt="Perde Resmi">
+                  </a>
+                  <div class="pt-4">
+                    <div class="nav pb-2 mb-1">
+                      <a class="nav-link text-body fs-xs text-uppercase p-0" href="#!">İç Mekan Düzenlemeleri</a>
+                    </div>
+                    <h3 class="h6 mb-3">
+                      <a class="hover-effect-underline" href="#!">Perdelerle yaşam alanınızı yenileyin: Şık düzenleme ipuçları</a>
+                    </h3>
+                    <div class="nav align-items-center gap-2 fs-xs">
+                      <a class="nav-link text-body-secondary fs-xs fw-normal p-0" href="#!">Kemal Şahin</a>
+                      <hr class="vr my-1 mx-1">
+                      <span class="text-body-secondary">23 Ağustos 2024</span>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Article -->
+                <article class="swiper-slide">
+                  <a class="ratio d-flex hover-effect-scale rounded-4 overflow-hidden" href="#!" style="--cz-aspect-ratio: calc(260 / 306 * 100%)">
+                    <img src="{% static "assets/img/blog/grid/v2/12.jpg" %}" class="hover-effect-target" alt="Perde Resmi">
+                  </a>
+                  <div class="pt-4">
+                    <div class="nav pb-2 mb-1">
+                      <a class="nav-link text-body fs-xs text-uppercase p-0" href="#!">Işık ve Gölge</a>
+                    </div>
+                    <h3 class="h6 mb-3">
+                      <a class="hover-effect-underline" href="#!">Perdelerle evinizi aydınlatın: Muhteşem ışık ipuçları</a>
+                    </h3>
+                    <div class="nav align-items-center gap-2 fs-xs">
+                      <a class="nav-link text-body-secondary fs-xs fw-normal p-0" href="#!">Leyla Demir</a>
+                      <hr class="vr my-1 mx-1">
+                      <span class="text-body-secondary">18 Ağustos 2024</span>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Article -->
+                <article class="swiper-slide">
+                  <a class="ratio d-flex hover-effect-scale rounded-4 overflow-hidden" href="#!" style="--cz-aspect-ratio: calc(260 / 306 * 100%)">
+                    <img src="{% static "assets/img/blog/grid/v2/13.jpg" %}" class="hover-effect-target" alt="Perde Resmi">
+                  </a>
+                  <div class="pt-4">
+                    <div class="nav pb-2 mb-1">
+                      <a class="nav-link text-body fs-xs text-uppercase p-0" href="#!">Perde Tasarımları</a>
+                    </div>
+                    <h3 class="h6 mb-3">
+                      <a class="hover-effect-underline" href="#!">Mekanınıza zarafet katın: Trend perde seçim önerileri</a>
+                    </h3>
+                    <div class="nav align-items-center gap-2 fs-xs">
+                      <a class="nav-link text-body-secondary fs-xs fw-normal p-0" href="#!">Deniz Kılıç</a>
+                      <hr class="vr my-1 mx-1">
+                      <span class="text-body-secondary">9 Ağustos 2024</span>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Article -->
+                <article class="swiper-slide">
+                  <a class="ratio d-flex hover-effect-scale rounded-4 overflow-hidden" href="#!" style="--cz-aspect-ratio: calc(260 / 306 * 100%)">
+                    <img src="{% static "assets/img/blog/grid/v2/14.jpg" %}" class="hover-effect-target" alt="Perde Resmi">
+                  </a>
+                  <div class="pt-4">
+                    <div class="nav pb-2 mb-1">
+                      <a class="nav-link text-body fs-xs text-uppercase p-0" href="#!">Trend Perde Modelleri</a>
+                    </div>
+                    <h3 class="h6 mb-3">
+                      <a class="hover-effect-underline" href="#!">Yeni trendleri keşfedin: Perdelerde çarpıcı tasarım örnekleri</a>
+                    </h3>
+                    <div class="nav align-items-center gap-2 fs-xs">
+                      <a class="nav-link text-body-secondary fs-xs fw-normal p-0" href="#!">Burak Arı</a>
+                      <hr class="vr my-1 mx-1">
+                      <span class="text-body-secondary">27 Temmuz 2024</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Slider scrollbar -->
+              <div class="swiper-scrollbar position-static" style="height: .125rem"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Featured post with video -->
+      <section class="bg-body-tertiary py-5">
+        <div class="container py-2 py-md-3 py-lg-4 py-xl-5">
+          <div class="row align-items-center">
+
+            <!-- Video -->
+            <div class="col-md-6 col-lg-7 col-xl-8 mb-4 mb-md-0">
+              <div class="position-relative">
+                <div class="ratio" style="--cz-aspect-ratio: calc(600 / 856 * 100%)">
+                  <img src="{% static "assets/img/blog/grid/v2/video02.jpg" %}" class="rounded-5" alt="Perde Videosu">
+                </div>
+                <div class="position-absolute start-0 bottom-0 d-flex align-items-end w-100 h-100 z-2 p-4">
+                  <a class="btn btn-lg btn-light rounded-pill m-md-2" href="https://www.youtube.com/watch?v=Z1xX1Kt9NkU" data-glightbox data-gallery="video2">
+                    <i class="ci-play fs-lg ms-n1 me-2"></i>
+                    Oynat
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Title + text -->
+            <div class="col-md-6 col-lg-5 col-xl-4">
+              <div class="ps-md-4 ps-lg-5">
+                <div class="nav mb-3">
+                  <a class="nav-link text-body fs-xs text-uppercase p-0" href="#!">Trend Perde Modelleri</a>
+                </div>
+                <h1 class="mb-4 mb-lg-5">Fransız esintisi: Modern perdelerde zarafet</h1>
+                <a class="btn btn-lg btn-outline-dark rounded-pill" href="#!">Daha fazla bilgi</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Posts grid -->
+      <section class="container py-5 mb-1 my-sm-2 my-md-3 my-lg-4 my-xl-5">
+        <div class="row row-cols-1 row-cols-sm-2 gy-5 py-2 py-xxl-3">
+
+          <!-- Article -->
+          <article class="col">
+            <a class="ratio d-flex hover-effect-scale rounded-4 overflow-hidden" href="#!" style="--cz-aspect-ratio: calc(466 / 636 * 100%)">
+              <img src="{% static "assets/img/blog/grid/v2/05.jpg" %}" class="hover-effect-target" alt="Perde Resmi">
+            </a>
+            <div class="pt-4">
+              <div class="nav pb-2 mb-1">
+                <a class="nav-link text-body fs-xs text-uppercase p-0" href="#!">Perde Tasarımları</a>
+              </div>
+              <h3 class="h5 mb-3">
+                <a class="hover-effect-underline" href="#!">Muhteşem perde seçim sırlarını keşfedin</a>
+              </h3>
+              <div class="nav align-items-center gap-2 fs-xs">
+                <a class="nav-link text-body-secondary fs-xs fw-normal p-0" href="#!">Ahmet Yılmaz</a>
+                <hr class="vr my-1 mx-1">
+                <span class="text-body-secondary">16 Temmuz 2024</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article -->
+          <article class="col">
+            <a class="ratio d-flex hover-effect-scale rounded-4 overflow-hidden" href="#!" style="--cz-aspect-ratio: calc(466 / 636 * 100%)">
+              <img src="{% static "assets/img/blog/grid/v2/06.jpg" %}" class="hover-effect-target" alt="Perde Resmi">
+            </a>
+            <div class="pt-4">
+              <div class="nav pb-2 mb-1">
+                <a class="nav-link text-body fs-xs text-uppercase p-0" href="#!">Perde Modelleri</a>
+              </div>
+              <h3 class="h5 mb-3">
+                <a class="hover-effect-underline" href="#!">Küçük alanlar için perde seçim tüyoları</a>
+              </h3>
+              <div class="nav align-items-center gap-2 fs-xs">
+                <a class="nav-link text-body-secondary fs-xs fw-normal p-0" href="#!">Sevil Şen</a>
+                <hr class="vr my-1 mx-1">
+                <span class="text-body-secondary">8 Temmuz 2024</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article -->
+          <article class="col">
+            <a class="ratio d-flex hover-effect-scale rounded-4 overflow-hidden" href="#!" style="--cz-aspect-ratio: calc(466 / 636 * 100%)">
+              <img src="{% static "assets/img/blog/grid/v2/07.jpg" %}" class="hover-effect-target" alt="Perde Resmi">
+            </a>
+            <div class="pt-4">
+              <div class="nav pb-2 mb-1">
+                <a class="nav-link text-body fs-xs text-uppercase p-0" href="#!">İç Mekan Düzenlemeleri</a>
+              </div>
+              <h3 class="h5 mb-3">
+                <a class="hover-effect-underline" href="#!">Pozitif enerji için perde düzenlemeleri: Feng shui ipuçları</a>
+              </h3>
+              <div class="nav align-items-center gap-2 fs-xs">
+                <a class="nav-link text-body-secondary fs-xs fw-normal p-0" href="#!">Zeynep Kaya</a>
+                <hr class="vr my-1 mx-1">
+                <span class="text-body-secondary">27 Haziran 2024</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article -->
+          <article class="col">
+            <a class="ratio d-flex hover-effect-scale rounded-4 overflow-hidden" href="#!" style="--cz-aspect-ratio: calc(466 / 636 * 100%)">
+              <img src="{% static "assets/img/blog/grid/v2/08.jpg" %}" class="hover-effect-target" alt="Perde Resmi">
+            </a>
+            <div class="pt-4">
+              <div class="nav pb-2 mb-1">
+                <a class="nav-link text-body fs-xs text-uppercase p-0" href="#!">Trend Perde Modelleri</a>
+              </div>
+              <h3 class="h5 mb-3">
+                <a class="hover-effect-underline" href="#!">Minimalizmi yakalayın: Basit ve şık perde önerileri</a>
+              </h3>
+              <div class="nav align-items-center gap-2 fs-xs">
+                <a class="nav-link text-body-secondary fs-xs fw-normal p-0" href="#!">Selim Öztürk</a>
+                <hr class="vr my-1 mx-1">
+                <span class="text-body-secondary">19 Haziran 2024</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+{% endblock %}

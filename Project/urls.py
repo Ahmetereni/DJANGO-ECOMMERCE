@@ -20,17 +20,36 @@ from django.conf.urls import include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+from cart import urls as cart_urls
+from payment import urls as payment_urls
 
 urlpatterns = [
     path('',views.mainpage,name='mainpage'),
-    path('shop/', views.shop, name='shop'),
-    path('payment/', views.payment, name='payment'),
+    path('shop',views.shop,name='shop'),
+    path('about',views.about,name='about'),
+    path('contact',views.contact,name='contact'),
+    path('help',views.help,name='help'),
+    path('termsandconditions',views.termsandconditions,name='termsandconditions'),
+    path('faq',views.faq,name='faq'),
 
+    path('certificates',views.certificates,name='certificates'),
+    path('policies',views.policies,name='policies'),
+    path('socialresponsibility',views.socialresponsibility,name='socialresponsibility'),
+    path('sustainability',views.sustainability,name='sustainability'),
+    path('getadvice',views.getadvice,name='getadvice'),
 
-    path('product/<int:product_id>/', views.product, name='product'),  # Product detail page
+    path('product/<int:product_id>/', views.product, name='product'),
+    path('blog_list',views.blog_list,name='blog_list'),
     path('admin/', admin.site.urls),
 
 
+    #cart app
+
+    path('cart/',include(cart_urls)),
+
+    #payment app
+
+    path('payment/',include(payment_urls)),
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

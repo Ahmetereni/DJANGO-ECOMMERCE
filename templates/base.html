@@ -2,8 +2,6 @@
 <!doctype html>
 <html lang="en" data-bs-theme="light" data-pwa="true">
   <head>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-
     <meta charset="utf-8">
 
     <!-- Viewport -->
@@ -20,7 +18,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="manifest" href="/manifest.json">
-    <link rel="icon" type="image/png" href="{% static "assets/app-icons/icon-32x32.png" %}" sizes="32x32">
+    <link  rel="icon" href="{% static 'assets/app-icons/favicon.ico' %}" sizes="32x32">
     <link rel="apple-touch-icon" href="{% static "assets/app-icons/icon-180x180.png" %}">
 
     <!-- Theme switcher (color modes) -->
@@ -298,29 +296,29 @@
               </li>
 
               <li class="nav-item me-lg-n2 me-xl-0">
-                <a class="nav-link fs-sm" href="{% url 'shop' %}">📝 Blog</a>
+                <a class="nav-link fs-sm" href="{% url 'blog_list' %}">📝 Blog</a>
               </li>
               <li class="nav-item dropdown me-lg-n1 me-xl-0">
                 <a class="nav-link dropdown-toggle fs-sm" href="#" role="button" data-bs-toggle="dropdown" data-bs-trigger="hover" data-bs-auto-close="outside" aria-expanded="false">🏢 Kurumsal</a>
                 <ul class="dropdown-menu" style="--cz-dropdown-spacer: 1rem">
-                  <li><a class="dropdown-item" href="{% url 'shop' %}">ℹ️ Hakkımızda</a></li>
-                  <li><a class="dropdown-item" href="{% url 'shop' %}">📞 İletişim</a></li>
-                  <li><a class="dropdown-item" href="{% url 'shop' %}">🆘 Yardım Merkezi</a></li>
-                  <li><a class="dropdown-item" href="{% url 'shop' %}">❓ Sıkça Sorulan Sorular</a></li>
-                  <li><a class="dropdown-item" href="{% url 'shop' %}">📜 Şartlar ve Koşullar</a></li>
+                  <li><a class="dropdown-item" href="{% url 'about' %}">ℹ️ Hakkımızda</a></li>
+                  <li><a class="dropdown-item" href="{% url 'contact' %}">📞 İletişim</a></li>
+                  <li><a class="dropdown-item" href="{% url 'help' %}">🆘 Yardım Merkezi</a></li>
+                  <li><a class="dropdown-item" href="{% url 'faq' %}">❓ Sıkça Sorulan Sorular</a></li>
+                  <li><a class="dropdown-item" href="{% url 'termsandconditions' %}">📜 Şartlar ve Koşullar</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown me-lg-n1 me-xl-0">
                 <a class="nav-link dropdown-toggle fs-sm" href="#" role="button" data-bs-toggle="dropdown" data-bs-trigger="hover" data-bs-auto-close="outside" aria-expanded="false">🌱 Sürdürülebilirlik</a>
                 <ul class="dropdown-menu" style="--cz-dropdown-spacer: 1rem">
-                  <li><a class="dropdown-item" href="{% url 'shop' %}">📜 Sertifikalar</a></li>
-                  <li><a class="dropdown-item" href="{% url 'shop' %}">📑 Politikalar</a></li>
-                  <li><a class="dropdown-item" href="{% url 'shop' %}">🤝 Sosyal Sorumluluk</a></li>
-                  <li><a class="dropdown-item" href="{% url 'shop' %}">🌍 Sürdürülebilirlik</a></li>
+                  <li><a class="dropdown-item" href="{% url 'certificates' %}">📜 Sertifikalar</a></li>
+                  <li><a class="dropdown-item" href="{% url 'policies' %}">📑 Politikalar</a></li>
+                  <li><a class="dropdown-item" href="{% url 'socialresponsibility' %}">🤝 Sosyal Sorumluluk</a></li>
+                  <li><a class="dropdown-item" href="{% url 'sustainability' %}">🌍 Sürdürülebilirlik</a></li>
                 </ul>
               </li>
               <li class="nav-item me-lg-n2 me-xl-0">
-                <a class="nav-link fs-sm" href="{% url 'shop' %}">🎨 Dekorasyon Önerisi Alın</a>
+                <a class="nav-link fs-sm" href="{% url 'getadvice' %}">🎨 Dekorasyon Önerisi Alın</a>
               </li>
             </ul>
           </div>
@@ -368,7 +366,7 @@
           </div>
 
           <!-- Cart button -->
-          <a href="{% url 'shop' %}" class="btn btn-icon fs-lg btn-outline-secondary border-0 rounded-circle animate-scale me-2" aria-label="Shopping cart">
+          <a href="{% url 'cart-summary' %}" class="btn btn-icon fs-lg btn-outline-secondary border-0 rounded-circle animate-scale me-2" aria-label="Shopping cart">
             <i class="ci-shopping-cart animate-target"></i>
             <div id="cart-qty" class="d-inline-flex">
               {% with qty_amount=cart|length %}

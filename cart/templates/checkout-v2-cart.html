@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block body %}
+<!-- Sayfa İçeriği -->
+<main class="content-wrapper">
+
+  <!-- Sayfa Yolu (Breadcrumb) -->
+  <nav class="container pt-1 pt-md-0 my-3 my-md-4" aria-label="breadcrumb">
+    <ol class="breadcrumb mb-0">
+      <li class="breadcrumb-item"><a href="index.html">Ana Sayfa</a></li>
+      <li class="breadcrumb-item"><a href="shop.html">Mağaza</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Sepet</li>
+    </ol>
+  </nav>
+
+  <!-- Sepet Ürünleri ve Sipariş Özeti -->
+  <section class="container pb-5 mb-2 mb-md-3 mb-lg-4 mb-xl-5">
+    <h1 class="h3 mb-4">Alışveriş Sepeti</h1>
+    <div class="row">
+
+      <!-- Sepet Ürünleri Listesi -->
+      <div class="col-lg-8">
+        <div class="pe-lg-2 pe-xl-3 me-xl-3">
+          <table class="table position-relative z-2 mb-4">
+            <thead>
+              <tr>
+                <th scope="col" class="fs-sm fw-normal py-3 ps-0">Ürün</th>
+                <th scope="col" class="fs-sm fw-normal py-3">Fiyat</th>
+                <th scope="col" class="fs-sm fw-normal py-3">Adet</th>
+                <th scope="col" class="fs-sm fw-normal py-3">Toplam</th>
+                <th scope="col" class="py-0 px-0">Sil</th>
+              </tr>
+            </thead>
+            <tbody class="align-middle">
+
+              {% for item in cart %}
+
+              {% with product=item.product %}
+
+
+              <!-- Örnek Ürün -->
+              <tr>
+                  <td class="py-3 ps-0">
+                      <div class="d-flex align-items-center">
+                          <a href="{% url 'product' product.id %}">
+                              <img src="{{ product.task_media.url }}" width="110" alt="Perde Modeli">
+                          </a>
+                          <div class="ps-3">
+                              <h5 class="lh-sm mb-2">
+                                  <a class="fs-sm fw-medium" href="{% url 'product' product.id %}">{{ product.product_name }}</a>
+                              </h5>
+                              <span class="text-body-secondary">Ölçü: {{ item.wid }} x {{ item.len }} cm</span>
+                          </div>
+                      </div>
+                  </td>
+                  <td class="h6 py-3">₺{{ product.product_price }}/{{ product.product_price_type }}</td>
+                  <td class="py-3">
+                      <div class="d-flex flex-column align-items-center">  <!-- Stack elements vertically -->
+                          <div class="count-input rounded-pill">
+                              <button type="button" class="btn btn-icon" data-decrement>-</button>
+                              <input type="number"  class="form-control" value="{{ item.qty }}" id="qty-{{ item.product_id }}" readonly>
+                              <button type="button" class="btn btn-icon" data-increment>+</button>
+                          </div>
+                          <!-- Refresh Icon Button Below -->
+                          <button type="button" class="btn btn-outline-secondary mt-2 refresh-btn update-button" data-index="{{ product.id }}"  title="Miktarı Güncelle">
+                              <i class="bi bi-arrow-clockwise"></i> Değiştir
+                          </button>
+                      </div>
+                  </td>
+                  <td class="h6 py-3">₺{{ item.total|floatformat:2 }}</td>
+                  <td class="text-end py-3 px-0">
+                      <button type="button" class="btn-close delete-button" data-index="{{ product.id }}" aria-label="Sepetten Çıkar"></button>
+                  </td>
+              </tr>
+
+
+              {% endwith %}
+
+              {% endfor %}
+
+            </tbody>
+          </table>
+          <a class="nav-link" href="shop.html">Alışverişe Devam Et</a>
+        </div>
+      </div>
+
+      <!-- Sipariş Özeti -->
+      <aside class="col-lg-4">
+        <div class="position-sticky top-0">
+          <h2 class="h5 border-bottom pb-4 mb-4">Sipariş Özeti</h2>
+          <ul class="list-unstyled fs-sm gap-3 mb-0">
+            <li class="d-flex justify-content-between">
+              Ara Toplam:
+              <span class="text-dark-emphasis fw-medium">₺{{cart.get_total}}</span>
+            </li>
+            <li class="d-flex justify-content-between">
+              Kargo:
+              <span class="text-dark-emphasis fw-medium">Ücretsiz</span>
+            </li>
+          </ul>
+          <div class="border-top pt-4 mt-4">
+            <div class="d-flex justify-content-between mb-3">
+              <span class="fs-sm">Toplam Tutar:</span>
+              <span class="h5 mb-0">₺{{cart.get_total}}</span>
+            </div>
+            <a class="btn btn-lg btn-primary w-100 rounded-pill" href='{% url "checkout" %}'>
+              Satın Al
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+
+
+<script>
+
+
+  $(document).on('click', '.delete-button', function(e) {
+      e.preventDefault();
+
+      let product_id = $(this).data('index'); // Use data attribute instead of val()
+
+
+      $.ajax({
+          type: 'POST',
+          url: '{% url "cart-delete" %}',
+
+          data: {
+              product_id: product_id,
+              csrfmiddlewaretoken: '{{ csrf_token }}',
+              action: 'post'
+          },
+
+          success: function(json) {
+
+              //console.log("AJAX Success:", json); // Log success response
+              location.reload();
+              document.getElementById("cart-qty").textContent =json.qty
+              document.getElementById("total").textContent =json.total
+
+          },
+
+          error: function(xhr, errmsg, err) {
+              //console.log("AJAX Error:", xhr.status, xhr.responseText); // Log error details
+          }
+      });
+  });
+
+
+</script>
+
+
+
+{% endblock %}

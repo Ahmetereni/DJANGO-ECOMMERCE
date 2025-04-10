@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block body %}
+
+    <!-- Sayfa içeriği -->
+    <main class="content-wrapper">
+      <div class="container py-5 mb-2 mb-sm-3 mb-md-4 mb-lg-5 mt-lg-3 mt-xl-4">
+
+        <!-- Sayfa başlığı -->
+        <h1 class="text-center">Bize Ulaşın</h1>
+        <p class="text-center pb-2 pb-sm-3">Aşağıdaki formu doldurun, size 24 saat içinde yanıt vereceğiz</p>
+
+        <!-- Form + Görsel -->
+        <section class="row row-cols-1 row-cols-md-2 g-0 overflow-hidden rounded-5">
+
+          <!-- İletişim Formu -->
+          <div class="col bg-body-tertiary py-5 px-4 px-xl-5">
+            <form class="needs-validation py-md-2 px-md-1 px-lg-3 mx-lg-3" novalidate>
+              <div class="position-relative mb-4">
+                <label for="name" class="form-label">İsim *</label>
+                <input type="text" class="form-control form-control-lg rounded-pill" id="name" required>
+                <div class="invalid-tooltip bg-transparent z-0 py-0 ps-3">Adınızı girin!</div>
+              </div>
+              <div class="position-relative mb-4">
+                <label for="email" class="form-label">E-posta *</label>
+                <input type="email" class="form-control form-control-lg rounded-pill" id="email" required>
+                <div class="invalid-tooltip bg-transparent z-0 py-0 ps-3">E-posta adresinizi girin!</div>
+              </div>
+              <div class="position-relative mb-4">
+                <label class="form-label">Konu *</label>
+                <select class="form-select form-select-lg rounded-pill" required>
+                  <option value="">Konu seçin</option>
+                  <option value="Genel Soru">Genel Soru</option>
+                  <option value="Sipariş Durumu">Sipariş Durumu</option>
+                  <option value="Ürün Bilgisi">Ürün Bilgisi</option>
+                  <option value="Teknik Destek">Teknik Destek</option>
+                  <option value="Web Sitesi Geri Bildirimi">Web Sitesi Geri Bildirimi</option>
+                  <option value="Hesap Yardımı">Hesap Yardımı</option>
+                  <option value="Güvenlik Sorunları">Güvenlik Sorunları</option>
+                </select>
+                <div class="invalid-tooltip bg-transparent z-0 py-0 ps-3">Mesajınızın konusunu seçin!</div>
+              </div>
+              <div class="position-relative mb-4">
+                <label for="message" class="form-label">Mesaj *</label>
+                <textarea class="form-control form-control-lg rounded-6" id="message" rows="5" required></textarea>
+                <div class="invalid-tooltip bg-transparent z-0 py-0 ps-3">Mesajınızı yazın!</div>
+              </div>
+              <div class="pt-2">
+                <button type="submit" class="btn btn-lg btn-dark rounded-pill">Mesaj Gönder</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Görsel -->
+          <div class="col position-relative">
+            <img src="{% static "assets/img/contact/form-image.jpg" %}" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="İletişim">
+          </div>
+        </section>
+
+        <!-- İletişim Bilgileri -->
+        <section class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 pt-5 pb-3 pb-md-4 pb-lg-3 mt-lg-0 mt-xxl-4">
+          <div class="col text-center">
+            <h3 class="h6">Bizi Arayın</h3>
+            <a class="fs-base" href="tel:+900000000000">+90 000 000 00 00</a>
+          </div>
+          <div class="col text-center">
+            <h3 class="h6">E-posta Gönderin</h3>
+            <a class="fs-base" href="mailto:info@nellyperde.com">info@nellyperde.com</a>
+          </div>
+          <div class="col text-center">
+            <h3 class="h6">Adresimiz</h3>
+            <p>İstanbul, Türkiye</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+{% endblock %}

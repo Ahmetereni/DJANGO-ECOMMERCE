@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block body %}
+
+    <!-- Sayfa içeriği -->
+    <main class="content-wrapper">
+
+      <!-- Hero (Video açılır pencere) -->
+      <section class="container pt-5 mt-1 mt-sm-2 mt-md-4 mt-lg-5">
+        <div class="text-center pb-2 pb-sm-3 pb-lg-0 pb-xxl-2 mx-auto mb-4 mb-lg-5" style="max-width: 650px">
+          <h1 class="text-body fs-xs fw-medium text-uppercase mb-sm-4">Nelly Perde'ye Hoş Geldiniz</h1>
+          <h2 class="h1 mb-0">Kaliteli perde ve dekor ürünleri herkes için ulaşılabilir olmalıdır</h2>
+        </div>
+        <div class="position-relative">
+          <div class="ratio" style="--cz-aspect-ratio: calc(672 / 1296 * 100%)">
+            <img src="{% static "assets/img/about/v2/hero.jpg" %}" class="rounded-5" alt="Görsel">
+          </div>
+          <a class="btn btn-lg btn-light rounded-pill position-absolute top-50 start-50 translate-middle z-2" href="https://www.youtube.com/watch?v=kkiJftHG3Wo" data-glightbox data-gallery="video">
+            <i class="ci-play fs-lg ms-n1 me-2"></i>
+            Oynat
+          </a>
+        </div>
+      </section>
+
+      <!-- Özellikler -->
+      <section class="container pt-5 mt-1 mt-sm-3 mt-md-4 mt-lg-5">
+        <div class="row row-cols-1 row-cols-md-3 gy-3 gy-sm-4 gx-2 gx-lg-4">
+          <div class="col text-center">
+            <h3 class="h5">Çevre Dostu</h3>
+            <p class="fs-sm px-5 mb-md-0">Doğal malzemelerle üretilen perdelerimiz, çevre dostu ve sağlıklı bir yaşam alanı sunar.</p>
+          </div>
+          <div class="col text-center">
+            <h3 class="h5">Üstün Kalite</h3>
+            <p class="fs-sm px-5 mb-md-0">En iyi üreticilerden seçilmiş malzemelerle, en yüksek kaliteyi sunuyoruz.</p>
+          </div>
+          <div class="col text-center">
+            <h3 class="h5">Kapınıza Teslim</h3>
+            <p class="fs-sm px-5 mb-md-0">Dünya çapında kapınıza kadar teslimat yapıyoruz. 30 gün içinde memnun kalmazsanız, çözüm sunuyoruz.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Görsel + Metin -->
+      <section class="container pt-5 pb-5 mt-md-4 mt-xl-5 mb-xxl-3">
+        <h2 class="h1 text-center pt-xxl-3 mx-auto mb-2" style="max-width: 620px">
+          İlham Veren Tasarımlar ile Yaşam Alanınızı Güzelleştirin
+        </h2>
+        <div class="row py-4 py-lg-5">
+          <div class="col-md-6 col-lg-7">
+            <div class="position-relative h-100">
+              <div class="ratio ratio-16x9"></div>
+              <img src="{% static "assets/img/blog/grid/v2/01.jpg" %}" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover rounded-5" alt="Görsel">
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-5">
+            <div class="pt-4 py-md-5 my-lg-3 my-xl-4 my-xxl-5 ps-md-3 ps-lg-4 ps-xxl-5">
+              <h3 class="mb-4">Evinizi Doğal ve Çevre Dostu Ürünlerle Dekore Edin</h3>
+              <p>Çevre dostu ürünler, karbon ayak izinizi azaltmanıza yardımcı olurken sağlıklı bir yaşam alanı sunar. Bambudan, geri dönüştürülmüş ahşaptan veya plastikten üretilen bu ürünler, hem doğa dostu hem de estetik bir çözüm sunar.</p>
+              <hr class="my-lg-5">
+              <div class="d-flex gap-3">
+                <span class="display-5 text-success-emphasis">75%</span>
+                <span class="h6 pt-1 mb-0">Ürünlerimizin %75'i doğal ve çevre dostu malzemelerden üretilmektedir.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row py-4 py-lg-5">
+          <div class="col-md-6 col-lg-7 order-md-2">
+            <div class="position-relative h-100">
+              <div class="ratio ratio-16x9"></div>
+              <img src="{% static "assets/img/blog/grid/v2/03.jpg" %}" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover rounded-5" alt="Görsel">
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-5 order-md-1">
+            <div class="pt-4 py-md-5 my-lg-3 my-xl-4 my-xxl-5 pe-md-3 pe-lg-4 pe-xxl-5">
+              <h3 class="mb-4">Her Detayda Kalite</h3>
+              <p>En iyi üreticilerden tedarik ettiğimiz hammaddelerle, perde ve dekorasyon ürünlerimiz her detayda en yüksek kaliteyi sunar.</p>
+              <hr class="my-lg-5">
+              <figure class="mb-0">
+                <blockquote class="blockquote">
+                  <p class="fs-base">"Her Nelly Perde projesi, müşterilerimize değer katma fırsatı sunar. En iyi üreticilerden tedarik edilen malzemelerle çalışmak bizim için büyük bir avantaj."</p>
+                </blockquote>
+                <figcaption class="blockquote-footer mb-0">Mehmet, İç Mimar</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Özellikler -->
+            <section class="bg-dark py-5 mt-n2 mt-sm-0" data-bs-theme="dark">
+              <div class="container pt-1 pt-sm-2 pt-md-3 pb-md-2 pt-lg-4 pb-lg-3 pb-xl-4 pt-xl-5 pb-xxl-5 mt-xxl-3">
+                <div class="row">
+                  <div class="col-lg-3 d-flex flex-column flex-sm-row flex-lg-column align-items-center align-items-lg-start pb-3 mb-3 mb-md-4">
+                    <h2 class="h1 text-center text-sm-start mb-sm-0 mb-lg-5 me-sm-4 me-lg-0">Üç Temel Özellik</h2>
+                    <a class="btn btn-lg btn-outline-light rounded-pill ms-sm-auto ms-lg-0" href="#">Kataloğu Görüntüle</a>
+                  </div>
+                  <div class="col-lg-9">
+                    <div class="overflow-auto" data-simplebar>
+                      <div class="d-flex gap-4">
+                        <div class="w-100" style="min-width: 230px">
+                          <img src="{% static "assets/img/about/v2/feature01.jpg" %}" class="d-block rounded-4 mb-4" alt="Görsel">
+                          <h3 class="h5 pb-1 mb-2">Müşteri Odaklılık</h3>
+                          <p class="text-body fs-sm mb-4">Her müşterimize isteklerini tam olarak anlayarak en iyi sonucu almak için gerekli zamanı ve ilgiyi gösteriyoruz.</p>
+                        </div>
+                        <div class="w-100" style="min-width: 230px">
+                          <img src="{% static "assets/img/about/v2/feature02.jpg" %}" class="d-block rounded-4 mb-4" alt="Görsel">
+                          <h3 class="h5 pb-1 mb-2">Detaylara Dikkat</h3>
+                          <p class="text-body fs-sm mb-4">Detayların önemine inanıyoruz ve üretim sürecinin her aşamasında kaliteyi sağlamak için titizlikle çalışıyoruz.</p>
+                        </div>
+                        <div class="w-100" style="min-width: 230px">
+                          <img src="{% static "assets/img/about/v2/feature03.jpg" %}" class="d-block rounded-4 mb-4" alt="Görsel">
+                          <h3 class="h5 pb-1 mb-2">Güven ve Kalite</h3>
+                          <p class="text-body fs-sm mb-4">İşimizin temelinde güven, kalite ve zamanında teslimat anlayışı yer almaktadır.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Mağaza Konumları + Harita -->
+            <section class="container pt-1 pt-sm-2 pt-md-3 pt-lg-4 pt-xl-5 mt-xxl-3">
+              <div class="row row-cols-1 row-cols-md-2 g-0 overflow-hidden rounded-5 mt-5">
+
+                <!-- Harita -->
+                <div class="col position-relative">
+                  <div class="ratio ratio-4x3"></div>
+                  <img src="{% static "assets/img/blog/grid/v2/video01.jpg" %}" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" alt="Görsel">
+                  <div class="position-absolute start-0 bottom-0 d-flex align-items-end w-100 h-100 z-2 p-4">
+                    <a class="btn btn-lg btn-light rounded-pill m-md-2" href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31316.673971626355!2d29.90357646949562!3d40.76666659057256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb4b3b4e4c11d7%3A0x8e5f8a524c15b6b3!2sKocaeli!5e0!3m2!1str!2str!4v1706086459668!5m2!1str!2str" data-glightbox="width: 100vw; height: 100vh;" data-gallery="map">
+                      <i class="ci-map fs-lg ms-n1 me-2"></i>
+                      Haritada Göster
+                    </a>
+                  </div>
+                </div>
+
+                <!-- İletişim Bilgileri -->
+                <div class="col bg-body-tertiary order-md-1 py-5 px-4 px-xl-5">
+                  <div class="py-md-4 py-lg-5 px-md-4 px-lg-5">
+                    <h1 class="pb-2 pb-sm-3 pb-lg-0 mb-md-4 mb-lg-5">Mağazalarımız</h1>
+                    <ul class="list-unstyled pb-sm-2 mb-0">
+                      <li class="d-flex">
+                        <i class="ci-map-pin fs-lg mt-1"></i>
+                        <span class="ps-2 ms-1">Kocaeli 41000, Türkiye<br>İzmit, Yenişehir Mahallesi</span>
+                      </li>
+                      <li class="nav animate-underline">
+                        <i class="ci-phone fs-lg mt-1 pe-2 me-1"></i>
+                        <a class="nav-link animate-target fs-base fw-normal p-0" href="tel:+902623311234">+90&nbsp;262&nbsp;331&nbsp;12&nbsp;34</a>
+                      </li>
+                      <li class="nav animate-underline">
+                        <i class="ci-mail fs-lg mt-1 pe-2 me-1"></i>
+                        <a class="nav-link animate-target fs-base fw-normal p-0" href="mailto:info@nellyperde.com">info@nellyperde.com</a>
+                      </li>
+                    </ul>
+                    <hr>
+                    <ul class="list-unstyled pt-sm-2 mb-0">
+                      <li class="d-flex">
+                        <i class="ci-map-pin fs-lg mt-1"></i>
+                        <span class="ps-2 ms-1">Kocaeli 41100, Türkiye<br>Gebze, Tatlıkuyu Mahallesi</span>
+                      </li>
+                      <li class="nav animate-underline">
+                        <i class="ci-phone fs-lg mt-1 pe-2 me-1"></i>
+                        <a class="nav-link animate-target fs-base fw-normal p-0" href="tel:+902623322345">+90&nbsp;262&nbsp;332&nbsp;23&nbsp;45</a>
+                      </li>
+                      <li class="nav animate-underline">
+                        <i class="ci-mail fs-lg mt-1 pe-2 me-1"></i>
+                        <a class="nav-link animate-target fs-base fw-normal p-0" href="mailto:info@nellyperde.com">info@nellyperde.com</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <br><br><br>
+            </section>
+
+    </main>
+
+{% endblock %}
